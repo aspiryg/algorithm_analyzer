@@ -1,0 +1,245 @@
+/* ---- SortingControlsBar ---- */
+/* mirrors the pathfinding ControlsBar layout & tokens */
+
+.sorting-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* ---- Input group ---- */
+.sorting-controls__input-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 200px;
+  max-width: 420px;
+}
+
+.sorting-controls__label {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.sorting-controls__input {
+  flex: 1;
+  padding: var(--space-1) var(--space-3);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-mono);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.sorting-controls__input:focus {
+  border-color: var(--sage-500);
+}
+
+.sorting-controls__input::placeholder {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+}
+
+/* ---- Divider ---- */
+.sorting-controls__divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-default);
+}
+
+/* ---- Algorithm selector ---- */
+.sorting-controls__select-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sorting-controls__select {
+  padding: var(--space-1) var(--space-3);
+  padding-right: var(--space-6);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236b7a8d' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.sorting-controls__select:hover {
+  border-color: var(--border-strong);
+}
+
+/* ---- Buttons ---- */
+.sorting-controls__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sorting-controls__btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.sorting-controls__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.sorting-controls__btn--primary {
+  background: var(--sage-600);
+  border-color: var(--sage-700);
+  color: #fff;
+  width: auto;
+  padding: 0 var(--space-3);
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.sorting-controls__btn--primary:hover:not(:disabled) {
+  background: var(--sage-500);
+}
+
+.sorting-controls__btn--secondary {
+  width: auto;
+  padding: 0 var(--space-2);
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+}
+
+.sorting-controls__btn--danger {
+  color: var(--accent-coral);
+}
+
+.sorting-controls__btn--danger:hover:not(:disabled) {
+  color: #fff;
+  background: rgba(212, 100, 92, 0.2);
+  border-color: var(--accent-coral);
+}
+
+/* ---- Playback ---- */
+.sorting-controls__playback {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* ---- Speed ---- */
+.sorting-controls__speed {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sorting-controls__speed-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 2px;
+  outline: none;
+}
+
+.sorting-controls__speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--sage-500);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.sorting-controls__speed-slider::-webkit-slider-thumb:hover {
+  background: var(--sage-400);
+}
+
+.sorting-controls__speed-value {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  min-width: 44px;
+}
+
+/* ---- Step counter ---- */
+.sorting-controls__step-counter {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ---- View mode toggle ---- */
+.sorting-controls__view-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.sorting-controls__view-btns {
+  display: flex;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.sorting-controls__view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 26px;
+  background: var(--bg-tertiary);
+  border: none;
+  border-right: 1px solid var(--border-default);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sorting-controls__view-btn:last-child {
+  border-right: none;
+}
+
+.sorting-controls__view-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.sorting-controls__view-btn--active {
+  background: var(--sage-600);
+  color: #fff;
+}
+
+.sorting-controls__view-btn--active:hover {
+  background: var(--sage-500);
+  color: #fff;
+}

@@ -1,0 +1,259 @@
+/* ---- SortingStatePanel ---- */
+
+.sorting-panel {
+  width: 320px;
+  min-width: 320px;
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: var(--space-4);
+  gap: var(--space-4);
+}
+
+.sorting-panel__empty {
+  color: var(--text-muted);
+  padding: var(--space-6) var(--space-2);
+}
+
+.sorting-panel__empty h4 {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-md);
+}
+
+.sorting-panel__empty p {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+/* ---- Header ---- */
+
+.sorting-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sorting-panel__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sorting-panel__algo-name {
+  font-size: var(--font-size-xs);
+  color: var(--sage-400);
+  font-weight: 600;
+}
+
+/* ---- Description ---- */
+
+.sorting-panel__description {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: 1.5;
+  padding: var(--space-3);
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--sage-600);
+  /* Fixed min-height prevents layout jitter when content changes */
+  min-height: 56px;
+  max-height: 80px;
+  overflow: hidden;
+  transition: min-height 0.2s ease, max-height 0.2s ease;
+}
+
+.sorting-panel__description--fast {
+  min-height: 36px;
+  max-height: 36px;
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-3);
+}
+
+.sorting-panel__description-fast-text {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* ---- Section ---- */
+
+.sorting-panel__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sorting-panel__section-title {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sorting-panel__section-count {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+/* ---- Key info (Insertion Sort) ---- */
+
+.sorting-panel__key-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sorting-panel__key-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--accent-coral);
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--font-size-md);
+  font-family: var(--font-mono);
+}
+
+.sorting-panel__key-detail {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* ---- Sorted region bar ---- */
+
+.sorting-panel__sorted-bar {
+  height: 6px;
+  background: var(--bg-tertiary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sorting-panel__sorted-fill {
+  height: 100%;
+  background: var(--sage-500);
+  border-radius: 3px;
+  transition: width var(--transition-base);
+}
+
+.sorting-panel__sorted-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.sorting-panel__sorted-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-sm);
+  background: rgba(90, 138, 90, 0.2);
+  color: var(--sage-300);
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+/* ---- Call stack (Merge Sort) ---- */
+
+.sorting-panel__call-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sorting-panel__stack-frame {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  border-left: 2px solid var(--border-default);
+}
+
+.sorting-panel__stack-frame--top {
+  background: rgba(86, 200, 216, 0.1);
+  border-left-color: var(--accent-cyan);
+  color: var(--text-primary);
+}
+
+.sorting-panel__stack-label {
+  /* inherits from frame */
+}
+
+/* ---- Ranges (Merge Sort) ---- */
+
+.sorting-panel__ranges {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sorting-panel__range {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+}
+
+.sorting-panel__range-label {
+  min-width: 48px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.sorting-panel__range-label--left {
+  color: var(--accent-cyan);
+}
+
+.sorting-panel__range-label--right {
+  color: var(--accent-amber);
+}
+
+.sorting-panel__range-value {
+  color: var(--text-secondary);
+}
+
+/* ---- Legend ---- */
+
+.sorting-panel__legend {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+}
+
+.sorting-panel__legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.sorting-panel__legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}

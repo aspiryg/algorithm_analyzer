@@ -1,0 +1,143 @@
+/* ---- Merge Sort Recursion Tree ---- */
+
+.merge-tree {
+  padding: var(--space-3);
+}
+
+/* Expanded mode — used when tree is the main area display */
+.merge-tree--expanded {
+  padding: var(--space-4);
+}
+
+.merge-tree--expanded .merge-tree__node {
+  padding: var(--space-2) var(--space-3);
+  min-width: 64px;
+}
+
+.merge-tree--expanded .merge-tree__node-range {
+  font-size: var(--font-size-xs);
+}
+
+.merge-tree--expanded .merge-tree__node-values {
+  font-size: var(--font-size-sm);
+}
+
+.merge-tree--expanded .merge-tree__node-state {
+  font-size: 10px;
+}
+
+.merge-tree--expanded .merge-tree__children {
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.merge-tree__title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.merge-tree__container {
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+}
+
+/* ---- Subtree layout ---- */
+
+.merge-tree__subtree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.merge-tree__children {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  position: relative;
+}
+
+/* connector lines from parent to children */
+.merge-tree__children::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--space-4));
+  left: 50%;
+  width: 0;
+  height: var(--space-2);
+  border-left: 1px solid var(--border-default);
+}
+
+.merge-tree__subtree:not(:only-child) {
+  position: relative;
+}
+
+/* horizontal connector between siblings */
+.merge-tree__children > .merge-tree__subtree::before {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--space-2));
+  left: 0;
+  right: 0;
+  height: 0;
+  border-top: 1px solid var(--border-default);
+}
+
+.merge-tree__children > .merge-tree__subtree:first-child::before {
+  left: 50%;
+}
+
+.merge-tree__children > .merge-tree__subtree:last-child::before {
+  right: 50%;
+}
+
+/* vertical stem from horizontal line to node */
+.merge-tree__children > .merge-tree__subtree::after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--space-2));
+  left: 50%;
+  width: 0;
+  height: var(--space-2);
+  border-left: 1px solid var(--border-default);
+}
+
+/* ---- Tree node ---- */
+
+.merge-tree__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  min-width: 48px;
+  transition: all var(--transition-fast);
+}
+
+.merge-tree__node-range {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.merge-tree__node-values {
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+.merge-tree__node-state {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}

@@ -1,0 +1,198 @@
+.controls-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* ---- Algorithm selector ---- */
+.controls-bar__select-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.controls-bar__label {
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.controls-bar__select {
+  padding: var(--space-1) var(--space-3);
+  padding-right: var(--space-6);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%236b7a8d' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.controls-bar__select:hover {
+  border-color: var(--border-strong);
+}
+
+/* ---- Divider ---- */
+.controls-bar__divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border-default);
+}
+
+/* ---- Playback buttons ---- */
+.controls-bar__playback {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.controls-bar__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.controls-bar__btn:hover:not(:disabled) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.controls-bar__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.controls-bar__btn--primary {
+  background: var(--sage-600);
+  border-color: var(--sage-700);
+  color: #fff;
+  width: auto;
+  padding: 0 var(--space-3);
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.controls-bar__btn--primary:hover:not(:disabled) {
+  background: var(--sage-500);
+}
+
+.controls-bar__btn--danger {
+  color: var(--accent-coral);
+}
+.controls-bar__btn--danger:hover:not(:disabled) {
+  color: #fff;
+  background: rgba(212, 100, 92, 0.2);
+  border-color: var(--accent-coral);
+}
+
+/* ---- Speed control ---- */
+.controls-bar__speed {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.controls-bar__speed-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 4px;
+  background: var(--bg-tertiary);
+  border-radius: 2px;
+  outline: none;
+}
+
+.controls-bar__speed-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--sage-500);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.controls-bar__speed-slider::-webkit-slider-thumb:hover {
+  background: var(--sage-400);
+}
+
+.controls-bar__speed-value {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  min-width: 44px;
+}
+
+/* ---- Step counter ---- */
+.controls-bar__step-counter {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ---- Graph settings toggles ---- */
+.controls-bar__toggles {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-left: auto;
+}
+
+.controls-bar__toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.controls-bar__toggle input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.controls-bar__toggle input[type="checkbox"]:checked {
+  background: var(--sage-600);
+  border-color: var(--sage-500);
+}
+
+.controls-bar__toggle input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

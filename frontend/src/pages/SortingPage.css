@@ -1,0 +1,45 @@
+/* ---- SortingPage layout ---- */
+
+.sorting-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.sorting-page__workspace {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.sorting-page__canvas-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+/* In "tree" view mode, bars become a small strip at the top */
+.sorting-page__canvas-area--compact {
+  /* bars will shrink, tree fills remaining space */
+}
+
+.sorting-page__canvas-area--compact .sorting-canvas {
+  flex: 0 0 140px;
+  min-height: 120px;
+  max-height: 180px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Tree fills the remaining main area */
+.sorting-page__tree-main {
+  flex: 1;
+  overflow: auto;
+  padding: var(--space-4);
+  background: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

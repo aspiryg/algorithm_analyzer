@@ -1,0 +1,121 @@
+/* ---- SortingCanvas ---- */
+
+.sorting-canvas {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--space-4);
+  user-select: none;
+}
+
+.sorting-canvas--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+/* ---- Bar container ---- */
+
+.sorting-canvas__bars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  padding-bottom: var(--space-2);
+  min-height: 0;
+}
+
+/* ---- Single bar ---- */
+
+.sorting-canvas__bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+.sorting-canvas__bar {
+  width: 70%;
+  max-width: 60px;
+  min-width: 8px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: background var(--transition-fast);
+
+  /* default / idle */
+  background: var(--slate-500);
+}
+
+/* ---- Bar states ---- */
+
+.sorting-canvas__bar--idle {
+  background: var(--slate-600);
+  opacity: 0.5;
+}
+
+.sorting-canvas__bar--highlight {
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(86, 200, 216, 0.4);
+}
+
+.sorting-canvas__bar--sorted {
+  background: var(--sage-500);
+}
+
+.sorting-canvas__bar--merged {
+  background: var(--accent-amber);
+}
+
+.sorting-canvas__bar--key {
+  background: var(--accent-coral);
+  box-shadow: 0 0 10px rgba(212, 100, 92, 0.4);
+}
+
+.sorting-canvas__bar--active-range {
+  background: var(--slate-400);
+}
+
+/* ---- Value label below bar ---- */
+
+.sorting-canvas__bar-label {
+  margin-top: var(--space-1);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1;
+}
+
+/* ---- Index ruler ---- */
+
+.sorting-canvas__indices {
+  display: flex;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: var(--space-1);
+}
+
+.sorting-canvas__index {
+  text-align: center;
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+}
+
+/* ---- Compact mode (tree-dominant view) ---- */
+
+.sorting-canvas--compact {
+  padding: var(--space-2);
+}
+
+.sorting-canvas--compact .sorting-canvas__bars {
+  gap: 1px;
+  padding-bottom: 0;
+}
+
+.sorting-canvas--compact .sorting-canvas__bar {
+  max-width: 40px;
+  min-width: 4px;
+}

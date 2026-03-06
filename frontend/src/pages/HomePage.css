@@ -1,0 +1,94 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--space-8);
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 40% 20%, rgba(90, 138, 90, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 80%, rgba(212, 168, 67, 0.05) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+.home-page__hero {
+  max-width: 600px;
+}
+
+.home-page__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+  line-height: 1.2;
+}
+
+.home-page__title-accent {
+  color: var(--sage-400);
+}
+
+.home-page__subtitle {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+.home-page__modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  max-width: 700px;
+  width: 100%;
+}
+
+.home-page__module {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.home-page__module:hover {
+  transform: translateY(-2px);
+  border-color: var(--sage-600);
+  box-shadow: var(--shadow-md);
+}
+
+.home-page__module--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.home-page__module-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  color: var(--sage-400);
+}
+
+.home-page__module-name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.home-page__module-status {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.home-page__module-status--available {
+  color: var(--sage-400);
+}
